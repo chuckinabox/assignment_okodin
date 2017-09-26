@@ -1,0 +1,28 @@
+{
+  "name": "assignment_okodin",
+  "version": "1.0.0",
+  "description": "Build a dating app so Viking thunder gods can find love &lt;3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chuckinabox/assignment_okodin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chuckinabox/assignment_okodin/issues"
+  },
+  "homepage": "https://github.com/chuckinabox/assignment_okodin#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-session": "^1.3.2",
+    "express": "^4.15.5",
+    "express-handlebars": "^3.0.0",
+    "morgan": "^1.8.2",
+    "morgan-toolkit": "^1.0.2"
+  }
+}
