@@ -8,9 +8,13 @@ var sequelize = models.sequelize;
 module.exports = app => {
   router.get("/", (req, res) => {
     Users.find({
-      where: { username: req.body.user.username, email: req.body.user.email }
+      where: {
+        username: req.session.userInfo.username,
+        email: req.session.userInfo.email
+      },
+      include: [Profiles]
     }).then(user => {
-      res.render("user/profile", user);
+      res.render("user/profile", { user });
     });
   });
   return router;

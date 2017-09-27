@@ -52,8 +52,14 @@ app.use("/user", userRouter);
 // Template Engine
 // ----------------------------------------
 var expressHandlebars = require("express-handlebars");
+var heightConverter = require("./helpers/heightConverter");
+var kidConverter = require("./helpers/kidConverter");
 
 var hbs = expressHandlebars.create({
+  helpers: {
+    heightConverter,
+    kidConverter
+  },
   partialsDir: "views/",
   defaultLayout: "application"
 });

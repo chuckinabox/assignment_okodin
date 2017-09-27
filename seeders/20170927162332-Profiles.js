@@ -16,10 +16,10 @@ module.exports = {
     let profiles = [];
     for (let i = 0; i < 10; i++) {
       var genderString = "male";
-      var genderImage = "viking_guy.jpg";
+      var genderImage = "assets/viking_guy.jpg";
       if (i % 2) {
         genderString = "female";
-        genderImage = "viking_girl.jpg";
+        genderImage = "assets/viking_girl.jpg";
       }
       profiles.push({
         fname: `Foo${i}`,
@@ -42,6 +42,9 @@ module.exports = {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non hendrerit libero. Duis dictum orci purus. Aenean condimentum eu sapien et porta. Fusce consectetur dapibus nulla id tincidunt. Nunc auctor posuere risus ut semper. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque consequat vel velit id volutpat. Phasellus ornare nulla vitae tellus lobortis, eu tristique magna sagittis. Phasellus metus dui, pellentesque nec venenatis ac, tristique eu sem. Sed pulvinar diam eget tortor varius, a ultrices justo faucibus. Quisque sit amet enim sollicitudin, feugiat tellus non, vulputate urna. Vestibulum vehicula commodo diam, eget fringilla velit finibus eu. Duis a vulputate nibh.",
         messageMe:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non hendrerit libero. Duis dictum orci purus. Aenean condimentum eu sapien et porta. Fusce consectetur dapibus nulla id tincidunt. Nunc auctor posuere risus ut semper. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque consequat vel velit id volutpat. Phasellus ornare nulla vitae tellus lobortis, eu tristique magna sagittis. Phasellus metus dui, pellentesque nec venenatis ac, tristique eu sem. Sed pulvinar diam eget tortor varius, a ultrices justo faucibus. Quisque sit amet enim sollicitudin, feugiat tellus non, vulputate urna. Vestibulum vehicula commodo diam, eget fringilla velit finibus eu. Duis a vulputate nibh.",
+        bodyType: "Built like a God",
+        kids: i % 3,
+        occupation: "Slying opposing Gods",
         image: genderImage,
         userId: i + 1
       });

@@ -44,6 +44,15 @@ module.exports = {
       petsOther: {
         type: Sequelize.INTEGER
       },
+      bodyType: {
+        type: Sequelize.STRING
+      },
+      kids: {
+        type: Sequelize.INTEGER
+      },
+      occupation: {
+        type: Sequelize.STRING
+      },
       image: {
         type: Sequelize.STRING
       },
