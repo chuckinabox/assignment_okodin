@@ -15,6 +15,9 @@ module.exports = {
         email: {
           type: Sequelize.STRING
         },
+        profileId: {
+          type: Sequelize.INTEGER
+        },
         createdAt: {
           allowNull: false,
           type: Sequelize.DATE,
@@ -30,9 +33,7 @@ module.exports = {
         return queryInterface.addIndex("Users", ["username"]);
       })
       .then(() => {
-        return queryInterface.addIndex("Users", ["email"], {
-          unique: true
-        });
+        return queryInterface.addIndex("Users", ["email"]);
       });
   },
   down: (queryInterface, Sequelize) => {

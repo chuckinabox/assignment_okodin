@@ -45,6 +45,8 @@ app.use(morganToolkit());
 // ----------------------------------------
 var loginRouter = require("./routers/login")(app);
 app.use("/", loginRouter);
+var userRouter = require("./routers/user")(app);
+app.use("/user", userRouter);
 
 // ----------------------------------------
 // Template Engine

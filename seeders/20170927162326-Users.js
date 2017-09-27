@@ -1,5 +1,5 @@
 "use strict";
-const models = require("../models");
+var models = require("./../models");
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -17,7 +17,8 @@ module.exports = {
     for (let i = 0; i < 10; i++) {
       users.push({
         username: `foobar${i}`,
-        email: `foobar${i}@gmail.com`
+        email: `foobar${i}@gmail.com`,
+        profileId: i + 1
       });
     }
     return queryInterface.bulkInsert("Users", users);
@@ -31,6 +32,6 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('Person', null, {});
     */
-    return queryInterface.bulkDelete("Users", null, {}, models.UserTables);
+    return queryInterface.bulkDelete("Users", null, {}, models.Users);
   }
 };
