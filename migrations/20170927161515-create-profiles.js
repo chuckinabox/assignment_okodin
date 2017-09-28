@@ -32,17 +32,8 @@ module.exports = {
       status: {
         type: Sequelize.STRING
       },
-      petsDogs: {
-        type: Sequelize.INTEGER
-      },
-      petsHorses: {
-        type: Sequelize.INTEGER
-      },
-      petsCats: {
-        type: Sequelize.INTEGER
-      },
-      petsOther: {
-        type: Sequelize.INTEGER
+      pets: {
+        type: Sequelize.ARRAY(Sequelize.STRING)
       },
       bodyType: {
         type: Sequelize.STRING
@@ -67,6 +58,11 @@ module.exports = {
       },
       messageMe: {
         type: Sequelize.TEXT
+      },
+      lastLogin: {
+        allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn("NOW")
       },
       userId: {
         type: Sequelize.INTEGER

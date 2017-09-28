@@ -8,10 +8,9 @@
          ages upto "{{search.age}}" years old</h3>
            <h3>
          {{#if search.locationDistance}}
-         within "{{search.locationDistance}} miles" of "{{search.locationCity}}"
+         within "{{search.locationDistance}} miles" of you
          {{/if}}
           with "{{search.pets}}"</h3>
-      <h3>online within the last ""</h3>
     </div>
   </div>
   <div class="row">
@@ -41,26 +40,26 @@
               <input type="radio" value="female" name="user[profile][gender]"> Female
             </label>
             <label>
-              <input type="radio" value="both" name="user[profile][gender]"> Both
+              <input type="radio" value="both" name="user[profile][gender]" required> Both
             </label>
           </div>
         </div>
         <div class="form-group col-sm-1">
           <label for="user_age">Age Max</label>
           <select name="user[profile][age]" id="user_age" class="form-control">
-            <option value="20">20</option>
-            <option value="100">100</option>
+            <option value="10000">Any</option>
             <option value="200">200</option>
-            <option value="1000">1000</option>
+            <option value="100">100</option>
+            <option value="20">20</option>
           </select>
         </div>
         <div class="form-group col-sm-1">
           <label for="user_locationDistance">Distance Max</label>
           <select name="user[profile][locationDistance]" id="user_locationDistance" class="form-control">
-            <option value="5">5 miles</option>
-            <option value="20">20 miles</option>
+            <option value="10000">Any</option>
             <option value="100">100 miles</option>
-            <option value="1000">1000 miles</option>
+            <option value="20">20 miles</option>
+            <option value="5">5 miles</option>
           </select>
         </div>
         <div class="form-group col-sm-1">
@@ -69,17 +68,17 @@
             <option value="0">Any</option>
             <option value="60">5'</option>
             <option value="66">5'6"</option>
-            <option value="72">6' & up</option>
+            <option value="72">6'</option>
           </select>
         </div>
         <div class="form-group col-sm-1">
           <label for="user_height">Height - Max</label>
           <select name="user[profile][heightMax]" id="user_height" class="form-control">
-            <option value="54">4'6"</option>
-            <option value="60">5'</option>
-            <option value="66">5'6"</option>
-            <option value="72">6'</option>
             <option value="200">All</option>
+            <option value="72">6'</option>
+            <option value="66">5'6"</option>
+            <option value="60">5'</option>
+            <option value="54">4'6"</option>
           </select>
         </div>
         <div class="form-group col-sm-2">
@@ -95,23 +94,22 @@
             <label><input type="checkbox" name="user[profile][pets]" value="Horses">Horses</label><br>
             <label><input type="checkbox" name="user[profile][pets]" value="Other">Other</label>
         </div>
-        <div class="form-group col-sm-1">
-          <a href="#"><button class="btn btn-default btn-primary" style="margin-top: 7em;">Search</button></a>
+        <div class="col-sm-12" style="text-align:right;">
+          Search with the sort by <span class="caret"></span>
         </div>
       </div>
-    </form>
   </div>
   <div class="row">
     <div class="col-sm-2 col-sm-offset-10">
-      <div class="dropdown" style="margin-top: 1em;">
-        <button class="dropdown-toggle btn btn-default btn-lg btn-secondary" data-toggle="dropdown"><span class="caret"></span> Sort by <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-          <li><a href="#">Distance</a></li>
-          <li><a href="#">Age</a></li>
-          <li><a href="#">Last login</a></li>
-        </ul>
-      </div>
+      <input type="hidden" name="search" value="{{search}}">
+      <select onchange="this.form.submit()" name="sort" id="user_age" class="form-control">
+        <option value="">Sort By</option>
+        <option value="locationDistance">Distance</option>
+        <option value="age">Age</option>
+        <option value="lastLogin">Last Login</option>
+      </select>
     </div>
+  </form>
   </div>
   <div class="row">
     {{#if users}}

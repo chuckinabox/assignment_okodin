@@ -11,10 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     locationCity: DataTypes.STRING,
     height: DataTypes.INTEGER,
     status: DataTypes.STRING,
-    petsDogs: DataTypes.INTEGER,
-    petsCats: DataTypes.INTEGER,
-    petsHorses: DataTypes.INTEGER,
-    petsOther: DataTypes.INTEGER,
+    pets: DataTypes.ARRAY(DataTypes.STRING),
     bodyType: DataTypes.STRING,
     kids: DataTypes.INTEGER,
     occupation: DataTypes.STRING,
@@ -23,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     talents: DataTypes.TEXT,
     favoriteThings: DataTypes.TEXT,
     messageMe: DataTypes.TEXT,
+    lastLogin: DataTypes.DATE,
     userId: DataTypes.INTEGER
   });
   Profiles.associate = function(models) {

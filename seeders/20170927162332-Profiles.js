@@ -30,10 +30,7 @@ module.exports = {
         locationCity: `City${i}`,
         height: 70,
         status: "single",
-        petsDogs: 2,
-        petsCats: 3,
-        petsHorses: 5,
-        petsOther: i,
+        pets: ["Dogs", "Cats"],
         aboutMe:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non hendrerit libero. Duis dictum orci purus. Aenean condimentum eu sapien et porta. Fusce consectetur dapibus nulla id tincidunt. Nunc auctor posuere risus ut semper. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque consequat vel velit id volutpat. Phasellus ornare nulla vitae tellus lobortis, eu tristique magna sagittis. Phasellus metus dui, pellentesque nec venenatis ac, tristique eu sem. Sed pulvinar diam eget tortor varius, a ultrices justo faucibus. Quisque sit amet enim sollicitudin, feugiat tellus non, vulputate urna. Vestibulum vehicula commodo diam, eget fringilla velit finibus eu. Duis a vulputate nibh.",
         talents:
@@ -45,6 +42,7 @@ module.exports = {
         bodyType: "Built like a God",
         kids: i % 3,
         occupation: "Slying opposing Gods",
+        lastLogin: new Date(2000 + i + `-12-17T12:22:00`),
         image: genderImage,
         userId: i + 1
       });
