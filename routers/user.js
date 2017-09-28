@@ -37,7 +37,20 @@ module.exports = app => {
       },
       include: [Profiles]
     }).then(user => {
-      res.render("user/profile", { user });
+      var newArray = user.Profile.viewers;
+      newArray.push(req.session.userInfo.id);
+      Profiles.update(
+        {
+          viewers: newArray
+        },
+        {
+          where: {
+            id: user.Profile.id
+          }
+        }
+      ).then(() => {
+        res.render("user/profile", { user });
+      });
     });
   });
   return router;

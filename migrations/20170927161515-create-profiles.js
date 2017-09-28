@@ -64,6 +64,12 @@ module.exports = {
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn("NOW")
       },
+      likers: {
+        type: Sequelize.ARRAY(Sequelize.INTEGER)
+      },
+      viewers: {
+        type: Sequelize.ARRAY(Sequelize.INTEGER)
+      },
       userId: {
         type: Sequelize.INTEGER
       },

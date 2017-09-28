@@ -21,6 +21,8 @@ module.exports = (sequelize, DataTypes) => {
     favoriteThings: DataTypes.TEXT,
     messageMe: DataTypes.TEXT,
     lastLogin: DataTypes.DATE,
+    likers: DataTypes.ARRAY(DataTypes.INTEGER),
+    viewers: DataTypes.ARRAY(DataTypes.INTEGER),
     userId: DataTypes.INTEGER
   });
   Profiles.associate = function(models) {

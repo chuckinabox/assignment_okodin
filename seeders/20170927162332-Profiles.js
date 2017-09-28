@@ -44,6 +44,8 @@ module.exports = {
         occupation: "Slying opposing Gods",
         lastLogin: new Date(2000 + i + `-12-17T12:22:00`),
         image: genderImage,
+        likers: [2, 3, 4],
+        viewers: [2, 3, 4],
         userId: i + 1
       });
     }

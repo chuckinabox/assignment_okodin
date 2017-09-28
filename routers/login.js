@@ -30,15 +30,17 @@ module.exports = app => {
 
   router.post("/login", (req, res) => {
     Users.find({
-      where: { username: req.body.user.username, email: req.body.user.email }
+      where: { username: req.body.user.username, email: req.body.user.email },
+      include: [Profiles]
     })
       .then(user => {
         if (user) {
           req.session.userInfo = {
             username: user.username,
-            email: user.email
+            email: user.email,
+            id: user.id
           };
-          res.render("user/profile", user);
+          res.render("user/profile", { user });
         } else {
           res.redirect("/");
         }
