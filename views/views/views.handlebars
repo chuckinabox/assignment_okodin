@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 text-center" style="border-bottom:2px solid black; margin-top: -2em;">
+      <h2>Views</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1" style="margin-top: 2em;">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#">They Viewed You</a></li>
+        <li><a href="#">You Viewed Them</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1" style="border:2px solid black; padding:2em;">
+      {{#if user}}
+        {{#each users as |user|}}
+          <div class="col-sm-4">
+
+          </div>
+          <div class="col-sm-8">
+            <a href="user/{{user.id}}"><h3>{{user.username}}</h3></a>
+            <h5>{{user.Profile.age}} years old, live in "{{user.Profile.locationCity}}"</h5>
+          </div>
+        {{/each}}
+      {{else}}
+      <h2>No Views Yet</h2>
+      {{/if}}
+    </div>
+  </div>
+</div>

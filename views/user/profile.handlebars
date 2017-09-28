@@ -1,15 +1,15 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-12" style="height: 10em; border-bottom: 2px solid black;">
-        <img class="col-sm-6" src="{{user.Profile.image}}" style="height: 12em; width: 12em; border: 2px solid black; margin-top: 2em; margin-left: 7em; padding:0;">
-        <div class="col-sm-6" style="margin-top: 3em;">
+    <div class="col-xs-12" style="height: 10em; border-bottom: 2px solid black;">
+        <img class="col-xs-6" src="../{{user.Profile.image}}" style="height: 12em; width: 12em; border: 2px solid black; margin-top: 2em; margin-left: 7em; padding:0;">
+        <div class="col-xs-6" style="margin-top: 3em; padding-bottom: 10em;">
           <h2>{{user.Profile.fname}} {{user.Profile.lname}}</h2>
           <h4>{{user.Profile.age}} years old, lives in "{{user.Profile.locationCity}}"</h4>
         </div>
     </div>
   </div>
   <div class="row" style="padding-top: 5em;">
-    <div class="col-sm-8 col-sm-offset-1">
+    <div class="col-xs-8 col-sm-offset-1">
       <h4>About Me</h4>
       <p>{{user.Profile.aboutMe}}</p>
       <h4>Talents</h4>
@@ -20,7 +20,7 @@
       <p>{{user.Profile.messageMe}}</p>
       <a href="#"><button class="btn btn-default btn-primary">Message Me!</button></a>
     </div>
-    <div class="col-sm-2">
+    <div class="col-xs-2">
       <h4>Basic Info</h4>
       <div style="border: 2px solid black">
         <h5>{{user.Profile.gender}}<h5>

@@ -17,5 +17,28 @@ module.exports = app => {
       res.render("user/profile", { user });
     });
   });
+
+  router.get("/edit", (req, res) => {
+    Users.find({
+      where: {
+        username: req.session.userInfo.username,
+        email: req.session.userInfo.email
+      },
+      include: [Profiles]
+    }).then(user => {
+      res.render("user/edit", { user });
+    });
+  });
+
+  router.get("/:id", (req, res) => {
+    Users.find({
+      where: {
+        id: req.params.id
+      },
+      include: [Profiles]
+    }).then(user => {
+      res.render("user/profile", { user });
+    });
+  });
   return router;
 };
